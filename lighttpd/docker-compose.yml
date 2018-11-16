@@ -1,0 +1,9 @@
+version: '2'
+services:
+  lighttpd:
+    build: .
+    ports:
+      - "14006:80"
+    volumes:
+      - ./website/:/var/www/localhost/htdocs
+

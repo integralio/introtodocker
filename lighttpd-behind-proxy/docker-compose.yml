@@ -1,0 +1,16 @@
+version: '2'
+services:
+  lighttpd:
+    build: .
+    environment:
+      - VIRTUAL_HOST=integratedetroit1.bootladder.com
+    ports:
+      - "14000:80"
+    volumes:
+      - ./website/:/var/www/localhost/htdocs
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
+
